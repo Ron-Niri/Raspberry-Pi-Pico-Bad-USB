@@ -1,0 +1,12 @@
+Windows D
+DELAY 250
+GUI
+DELAY 250
+STRING chrome
+DELAY 555
+ENTER
+DELAY 250
+STRING https://drive.google.com/drive/folders/1g5rnLqVaEYLZLN1udMAf3xbIA2uP0lzZ?usp=sharing
+DELAY 250
+ENTER
+DELAY 555
