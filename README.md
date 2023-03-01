@@ -8,4 +8,4 @@ Steps:
 
 Now, you will need to enter your password instad of clicking "Yes" (or CTRL + Y).
 
--# To Change it back change the valume to 5.
+-# To Change it back change the value to 5.
